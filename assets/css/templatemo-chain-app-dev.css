@@ -969,9 +969,13 @@ Banner Style
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding: 250px 120px 150px 120px;
+  padding: 100px 0px 150px 120px;
   position: relative;
   overflow: hidden;
+}
+.main-banner .container {
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .main-banner:after {
@@ -1644,6 +1648,9 @@ footer {
   margin-top: 130px;
   padding-top: 300px;
   padding-bottom: 60px;
+
+  display: flex;
+  align-items: end;
 }
 
 footer .section-heading {
@@ -1754,6 +1761,7 @@ footer p a:hover {
   opacity: 0.75;
   color: #eafaff;
 }
+
 footer h4 a {
   color: #eafaff;
 }
@@ -2037,6 +2045,9 @@ responsive
 }
 
 @media (max-width: 992px) {
+  .container-slider {
+    display: none;
+  }
   .header-area {
     background-color: #eafaff;
   }
@@ -2132,9 +2143,7 @@ responsive
   .pricing-item-regular {
     margin-bottom: 30px;
   }
-  .our-portfolio .owl-nav {
-    display: none !important;
-  }
+
   .contact-info {
     margin-top: 60px;
   }
@@ -2144,11 +2153,15 @@ responsive
 }
 
 @media (max-width: 767px) {
+  footer {
+    min-height: 900px;
+  }
+  footer h4 {
+    display: flex;
+    flex-direction: column;
+  }
   .the-clients .naccs .menu div {
     text-align: center;
-  }
-  footer .section-heading h4 {
-    color: #2a2a2a;
   }
   footer #search {
     margin-bottom: 45px;
@@ -2182,6 +2195,9 @@ responsive
   }
   footer #search input::placeholder {
     color: #2a2a2a;
+  }
+  footer h4 a {
+    color: #eafaff;
   }
   .header-area .main-nav .logo h4 {
     font-size: 30px;
@@ -2278,5 +2294,38 @@ responsive
   }
   form#contact {
     padding: 30px;
+  }
+}
+.container-slider {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 550px;
+  padding-right: 0 !important;
+  overflow: hidden;
+}
+
+.container-slider img {
+  height: 100%; /* Full height of parent */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevent cropping */
+  display: block;
+}
+
+.owl-container {
+  z-index: 999 !important;
+  padding-top: 50px;
+}
+.portfolio-item .thumb {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+@media (max-width: 480px) {
+  .portfolio-item .thumb {
+    max-width: 400px;
   }
 }
